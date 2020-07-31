@@ -17,6 +17,8 @@ export class NavbarComponent implements OnInit {
     private yScrollStack: number[] = [];
     isLoggedIn$: Observable<boolean>;
     private isLogged = false;
+    private isShown;
+    private count;
 
     constructor(public location: Location, private router: Router, private pojoService : PojoService,private authService: AuthService) {
     }
@@ -25,13 +27,13 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn$ = this.authService.isLoggedIn;
         this.authService.isLoggedIn.subscribe((login) => {
             this.isLogged =login;
+            this.isShown = this.pojoService.getAdminFlag();
+            this.count=this.pojoService.getNotification();
         });
 
 
-    console.log("testFlag"+this.pojoService.getAdminFlag());
       this.router.events.subscribe((event) => {
         this.isCollapsed = true;
-        let isShown = this.pojoService.getAdminFlag();
         if (event instanceof NavigationStart) {
            if (event.url != this.lastPoppedUrl)
                this.yScrollStack.push(window.scrollY);

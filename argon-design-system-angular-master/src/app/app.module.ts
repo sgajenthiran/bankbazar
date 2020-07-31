@@ -5,6 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app.routing';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 
 
 import { AppComponent } from './app.component';
@@ -18,9 +20,15 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthService } from './auth/auth.service';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-
 import { HomeModule } from './home/home.module';
 import { LoginComponent } from './login/login.component';
+import { NgbdModalComponent } from './modal/modal.component';
+import { NgbdModalContent } from './modal/modal.component';
+import { AlertComponent } from './alert/alert.component';
+import { TabsSectionComponent } from './tabs-section/tabs-section.component';
+import {EMIModule} from './emi/emi.module'
+
+
 
 @NgModule({
   declarations: [
@@ -30,8 +38,13 @@ import { LoginComponent } from './login/login.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    NgbdModalComponent,
+    NgbdModalContent,
+    AlertComponent,
+    TabsSectionComponent
   ],
+  entryComponents: [NgbdModalContent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -39,7 +52,9 @@ import { LoginComponent } from './login/login.component';
     RouterModule,
     HttpClientModule,
     AppRoutingModule,
-    HomeModule
+    NgxUiLoaderModule,
+    HomeModule,
+    EMIModule
   ],
   providers: [RegisterService, PojoService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
