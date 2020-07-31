@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PojoService {
 	private adminFlag= false;
+	public count;
 
    	constructor(private http: HttpClient) { }
 
@@ -14,5 +15,14 @@ export class PojoService {
 
    	getAdminFlag(){
    	 return this.adminFlag;
+   	}
+
+   	setNotification(count){
+   		this.count  = count;
+   	}
+
+   	getNotification(){
+   	 return this.count;
+
    	}
 }

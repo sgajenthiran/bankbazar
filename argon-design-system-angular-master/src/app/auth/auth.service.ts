@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
+import { PojoService } from '../services/pojoservice';
+
 
 @Injectable()
 export class AuthService {
@@ -12,11 +14,15 @@ export class AuthService {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+            private pojoService: PojoService,
+
   ) {}
 
   login(user: User) {
     if (user.userName !== '' && user.password !== '' ) {
+    console.log(user.count);
+    this.pojoService.setNotification(user.count);
       this.loggedIn.next(true);
       //this.router.navigate(['/']);
     }

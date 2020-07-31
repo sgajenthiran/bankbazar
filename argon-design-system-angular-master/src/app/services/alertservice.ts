@@ -12,11 +12,11 @@ import 'rxjs/add/operator/catch';
 })
 export class RegisterService {
    private finaldata = [];
-   private apiurl = "http://192.168.99.1:1234/";
+   private apiurl = "http://192.168.18.26:8280/saveUserDetails";
    constructor(private http: HttpClient) { }
    
-   getData(action) {
-      return this.http.get(this.apiurl+action) 
+   getData() {
+      return this.http.get(this.apiurl) 
       		.map(this.extractData)
             .catch(this.handleError); 
    	}

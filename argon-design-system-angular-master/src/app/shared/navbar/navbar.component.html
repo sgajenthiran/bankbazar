@@ -56,9 +56,16 @@
           </a>
         
         </li>
+         <li class="nav-item dropdown" >
+          <a class="nav-link no-caret" [routerLink]="['/loans']"  data-toggle="dropdown" role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">EMI  Calculator</span>
+          </a>
+        
+        </li>
 
                <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+          <a class="nav-link no-caret"  data-toggle="dropdown" role="button">
             <i class="ni ni-ui-04 d-lg-none"></i>
             <span class="nav-link-inner--text">Other Loans</span>
           </a>
@@ -95,111 +102,97 @@
             <a [routerLink]="['/login']" class="dropdown-item">Motor Insurance</a>
           </div>
         </li>
+
+        
+
+        <!--<span *ngIf="isLoggedIn$ | async as isLoggedIn"> 
            <li class="nav-item dropdown" *ngIf="isShown">
           <a class="nav-link no-caret" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none"></i>
             <span class="nav-link-inner--text">Notification</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-
-          <!-- <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Insurances</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-
-           <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Resources</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-
-           <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Learn</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>
-          <li class="nav-item dropdown">
-          <a class="nav-link no-caret" data-toggle="dropdown" role="button">
-            <i class="ni ni-collection d-lg-none"></i>
-            <span class="nav-link-inner--text">Support</span>
-          </a>
-          <div class="dropdown-menu">
-            <a [routerLink]="['/landing']" class="dropdown-item">Landing</a>
-            <a [routerLink]="['/user-profile']" class="dropdown-item">Profile</a>
-            <a [routerLink]="['/login']" class="dropdown-item">Login</a>
-            <a [routerLink]="['/register']" class="dropdown-item">Register</a>
-          </div>
-        </li>-->
+          </a>-->
       </ul>
+             
+        <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+           <li class="nav-item dropdown" *ngIf="isLoggedIn$ | async as isLoggedIn">
+          <a class="nav-link nav-link-icon" data-toggle="dropdown" >
+            <i class="ni ni-email-83  "></i>
+            <span class="badge badge-white">{{count}}</span>
 
-     <!-- <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-        <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
-            <i class="fa fa-facebook-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+           <!-- <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">Components</span>-->
+          </a>
+          <div class="dropdown-menu-xl dropdown-menu" >
+            <div class="dropdown-menu-inner">
+              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                  <i class="ni ni-spaceship"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Notification 1</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                  <i class="ni ni-palette"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h6 class="heading text-primary mb-md-1">Notification 2</h6>
+                  <p class="description d-none d-md-inline-block mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+              </a>
+              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-ui-04"></i>
+                </div>
+                <div class="media-body ml-3">
+                  <h5 class="heading text-warning mb-md-1">Notification 3</h5>
+                  <p class="description d-none d-md-inline-block mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </li>
+         <li class="nav-item" *ngIf="isLoggedIn$ | async as isLoggedIn">
+          <a *ngIf="isLoggedIn" class="nav-link nav-link-icon" data-toggle="tooltip" title="Star us on Github">
+            <i class="ni ni-circle-08"></i>
+            <span class="nav-link-inner--text d-lg-none">Profile</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
-            <i class="fa fa-instagram"></i>
-            <span class="nav-link-inner--text d-lg-none">Instagram</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
-            <i class="fa fa-twitter-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Twitter</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">
-            <i class="fa fa-github"></i>
-            <span class="nav-link-inner--text d-lg-none">Github</span>
-          </a>
-        </li>
-        <li class="nav-item d-none d-lg-block ml-lg-4">
-          <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar" target="_blank" class="btn btn-neutral btn-icon">
-            <span class="btn-inner--icon">
-              <i class="fa fa-cloud-download mr-2"></i>
+        <li (click)="onLogIn()" class="nav-item d-none d-lg-block ml-lg-4" *ngIf="!isLogged" >
+          <a   class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon" >
+             <!-- <i class="fa fa-cloud-download mr-2"></i>-->
             </span>
-            <span class="nav-link-inner--text">Download</span>
+            <span (click)="onLogIn()" class="nav-link-inner--text" >Login</span>
           </a>
         </li>
-      </ul>-->
+        <span *ngIf="isLoggedIn$ | async as isLoggedIn">
+        <li (click)="onLogout()" *ngIf="isLoggedIn" class="nav-item d-none d-lg-block ml-lg-4" >
+          <a   class="btn btn-neutral btn-icon" >
+            <span class="btn-inner--icon">
+              <i class="ni ni-button-power"></i>
+            </span>
+            <span  class="nav-link-inner--text" >Logout</span>
+          </a>
+        </li>
+</span>
+      </ul>
     </div>
 
   </div>
-  <a (click)="onLogIn()"  class="btn btn-primary btn-icon " *ngIf="!isLogged" style="margin:10px;">Login</a>
+  <!--<a (click)="onLogIn()"  class="btn btn-primary btn-icon " *ngIf="!isLogged" style="margin:10px;">Login</a>--
 
   <div *ngIf="isLoggedIn$ | async as isLoggedIn"> 
-    <a (click)="onLogout()" class="btn btn-primary btn-icon " *ngIf="isLoggedIn" style="margin:10px;">Logout</a>
-  </div>
+    <a (click)="onLogout()" class="btn btn-neutral btn-icon" *ngIf="isLoggedIn" style="margin:10px;"><span class="btn-inner--icon">
+            </span>
+            <span  class="nav-link-inner--text" >Logout</span></a>
+     <a  (click)="onLogout()" class="btn btn-neutral btn-icon" *ngIf="!isLogged">
+            <span class="btn-inner--icon">
+              <i class="fa fa-sign-out mr-2"></i>
+            </span>
+            <span  class="nav-link-inner--text" >Logout</span>
+          </a>
+  </div>-->
 </nav>
